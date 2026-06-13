@@ -27,7 +27,7 @@ flat (e.g. `catalog.html`, `kitchens.html`).
 <title>{{PAGE TITLE — include "из Китая" + "ChinaRoom"}}</title>
 <meta name="description" content="{{150-160 chars, keyword-rich}}">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://chinaroom.ru/{{FILENAME}}">
+<link rel="canonical" href="https://china-room.ru/{{FILENAME}}">
 <meta name="geo.region" content="RU-CU">
 <meta name="geo.placename" content="Чебоксары">
 <meta name="geo.position" content="56.1439;47.2489">
@@ -37,8 +37,8 @@ flat (e.g. `catalog.html`, `kitchens.html`).
 <meta property="og:site_name" content="ChinaRoom — Китайская Комната">
 <meta property="og:title" content="{{OG TITLE}}">
 <meta property="og:description" content="{{OG DESC}}">
-<meta property="og:url" content="https://chinaroom.ru/{{FILENAME}}">
-<meta property="og:image" content="https://chinaroom.ru/img/interiors/{{IMG}}.jpg">
+<meta property="og:url" content="https://china-room.ru/{{FILENAME}}">
+<meta property="og:image" content="https://china-room.ru/img/interiors/{{IMG}}.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">

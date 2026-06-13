@@ -73,14 +73,14 @@
       '@context': 'https://schema.org',
       '@type': 'Product',
       name: p.name,
-      image: p.gallery.map(function (g) { return 'https://chinaroom.ru/' + g; }),
+      image: p.gallery.map(function (g) { return 'https://china-room.ru/' + g; }),
       description: p.description,
       category: p.categoryLabel,
       brand: { '@type': 'Brand', name: 'ChinaRoom' },
       offers: {
         '@type': 'Offer', priceCurrency: 'RUB', price: p.price,
         availability: 'https://schema.org/InStock',
-        url: 'https://chinaroom.ru/product.html?id=' + p.id
+        url: 'https://china-room.ru/product.html?id=' + p.id
       }
     };
     var s = document.createElement('script');
@@ -98,7 +98,7 @@
     var md = document.querySelector('meta[name="description"]');
     if (md) md.setAttribute('content', p.short + ' Доставка по России за 30–45 дней. ChinaRoom.');
     var canon = document.querySelector('link[rel="canonical"]');
-    if (canon) canon.setAttribute('href', 'https://chinaroom.ru/product.html?id=' + p.id);
+    if (canon) canon.setAttribute('href', 'https://china-room.ru/product.html?id=' + p.id);
     injectJsonLd(p);
 
     var old = p.oldPrice ? '<span class="product-card__old">' + fmt(p.oldPrice) + '</span>' : '';

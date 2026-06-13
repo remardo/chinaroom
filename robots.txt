@@ -5,4 +5,4 @@ User-agent: Yandex
 Allow: /
 Clean-param: utm_source&utm_medium&utm_campaign&utm_term&utm_content&yclid&gclid
 
-Sitemap: https://chinaroom.ru/sitemap.xml
+Sitemap: https://china-room.ru/sitemap.xml
