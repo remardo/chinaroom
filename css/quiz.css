@@ -1,0 +1,75 @@
+/* ============================================================
+   ChinaRoom — quiz calculator + regional landing extras
+   ============================================================ */
+.quiz {
+  max-width: 640px;
+  margin: 0 auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(700px circle at 100% -20%, rgba(201,162,75,0.1), transparent 55%),
+    var(--bg-card-2);
+  padding: 40px 40px 34px;
+}
+.quiz__bar { height: 3px; background: var(--line-soft); border-radius: 3px; overflow: hidden; margin-bottom: 26px; }
+.quiz__bar span { display: block; height: 100%; background: linear-gradient(90deg, var(--red-bright), var(--gold)); transition: width 0.5s var(--ease); }
+.quiz__step { font-size: 11px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold); }
+.quiz__title { font-family: var(--font-display); font-size: clamp(24px, 3vw, 32px); text-transform: uppercase; margin: 8px 0 24px; line-height: 1.1; }
+
+.quiz__options { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.quiz__opt {
+  text-align: left;
+  padding: 18px 20px;
+  border: 1px solid var(--line-soft);
+  border-radius: 14px;
+  background: rgba(14,11,9,0.4);
+  color: var(--text);
+  font-size: 15px;
+  font-weight: 500;
+  transition: border-color 0.3s, background 0.3s, transform 0.3s var(--ease);
+}
+.quiz__opt:hover { border-color: var(--gold); transform: translateY(-2px); }
+.quiz__opt.is-selected { border-color: var(--gold); background: rgba(201,162,75,0.1); }
+
+.quiz__field { margin-bottom: 12px; }
+.quiz__hint { font-size: 12.5px; color: var(--text-faint); margin-top: 6px; }
+
+.quiz__nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: 26px; }
+.quiz__back { color: var(--text-muted); font-size: 14px; transition: color 0.3s; }
+.quiz__back:hover { color: var(--gold); }
+.quiz__next { min-width: 180px; }
+
+.quiz--done { text-align: center; color: var(--gold); display: flex; flex-direction: column; align-items: center; gap: 16px; padding: 20px 10px; }
+.quiz--done h3 { font-family: var(--font-display); font-size: 30px; text-transform: uppercase; }
+.quiz--done p { color: var(--text-muted); max-width: 460px; }
+.quiz--done .btn { margin-top: 8px; }
+
+@media (max-width: 560px) {
+  .quiz { padding: 30px 22px 26px; }
+  .quiz__options { grid-template-columns: 1fr; }
+  .quiz__next { min-width: 140px; }
+}
+
+/* ---------- Regional landing extras ---------- */
+.region-intro { background: var(--bg-soft); }
+.region-points { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 44px; }
+.region-point {
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius);
+  padding: 28px;
+  background: var(--bg-card);
+}
+.region-point h3 { font-size: 17px; margin-bottom: 10px; }
+.region-point p { font-size: 14px; color: var(--text-muted); }
+.region-cats { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 36px; }
+.region-cats a {
+  padding: 11px 22px;
+  border: 1px solid var(--line);
+  border-radius: 40px;
+  font-size: 14px;
+  color: var(--text);
+  transition: all 0.3s var(--ease);
+}
+.region-cats a:hover { background: var(--gold); border-color: var(--gold); color: #1d130a; transform: translateY(-2px); }
+
+@media (max-width: 860px) { .region-points { grid-template-columns: 1fr; } }

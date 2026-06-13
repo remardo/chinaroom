@@ -472,6 +472,33 @@
   bindForm('ctaForm', 'formSuccess');
   bindForm('modalForm', 'modalSuccess');
 
+  /* ================= Floating messenger button ================= */
+  (function () {
+    if (document.querySelector('.msg-fab')) return;
+    var wrap = document.createElement('div');
+    wrap.className = 'msg-fab';
+    wrap.innerHTML =
+      '<a class="msg-fab__btn msg-fab__btn--wa" href="https://wa.me/78352000000?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%20%D0%BC%D0%B5%D0%B1%D0%B5%D0%BB%D1%8C%20%D0%B8%D0%B7%20%D0%9A%D0%B8%D1%82%D0%B0%D1%8F" target="_blank" rel="noopener" aria-label="Написать в WhatsApp"><svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor"><path d="M12 0a12 12 0 0 0-10.4 18L0 24l6.2-1.6A12 12 0 1 0 12 0Zm0 22a10 10 0 0 1-5.1-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A10 10 0 1 1 12 22Zm5.5-7.5c-.3-.2-1.8-.9-2-1s-.5-.2-.7.1-.8 1-.9 1.2-.3.2-.6.1a8.2 8.2 0 0 1-2.4-1.5 9 9 0 0 1-1.7-2.1c-.2-.3 0-.5.1-.6l.5-.5a2 2 0 0 0 .3-.5.6.6 0 0 0 0-.5c0-.2-.7-1.7-1-2.3s-.5-.5-.7-.5h-.6a1.1 1.1 0 0 0-.8.4 3.4 3.4 0 0 0-1 2.5 5.9 5.9 0 0 0 1.2 3.1 13.4 13.4 0 0 0 5.1 4.5 17.2 17.2 0 0 0 1.7.6 4.1 4.1 0 0 0 1.9.1 3.1 3.1 0 0 0 2-1.4 2.5 2.5 0 0 0 .2-1.4c-.1-.1-.3-.2-.6-.3Z"/></svg></a>' +
+      '<a class="msg-fab__btn msg-fab__btn--tg" href="https://t.me/chinaroom" target="_blank" rel="noopener" aria-label="Написать в Telegram"><svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor"><path d="M11.94 0A12 12 0 1 0 24 12 12 12 0 0 0 11.94 0Zm5.87 8.16-1.97 9.3c-.15.66-.54.82-1.09.51l-3-2.21-1.45 1.4a.76.76 0 0 1-.6.29l.21-3.05 5.56-5.02c.24-.21-.05-.33-.37-.12l-6.87 4.33-2.96-.93c-.64-.2-.66-.64.14-.95l11.57-4.46c.53-.2 1 .12.83.91Z"/></svg></a>';
+    document.body.appendChild(wrap);
+  })();
+
+  /* ================= File input filename display ================= */
+  document.querySelectorAll('input[type="file"]').forEach(function (input) {
+    input.addEventListener('change', function () {
+      var label = input.closest('.form__file');
+      var txt = label && label.querySelector('.form__file-text');
+      if (!txt) return;
+      if (input.files && input.files.length) {
+        txt.textContent = input.files.length === 1 ? input.files[0].name : 'Файлов: ' + input.files.length;
+        label.classList.add('is-filled');
+      } else {
+        txt.textContent = 'Прикрепить фото или дизайн-проект';
+        label.classList.remove('is-filled');
+      }
+    });
+  });
+
   /* ================= Smooth anchor offset ================= */
   document.querySelectorAll('a[href^="#"]').forEach(function (link) {
     link.addEventListener('click', function (e) {
