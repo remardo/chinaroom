@@ -1,1 +1,10 @@
 .dev/
+node_modules/
+__pycache__/
+outputs/
+img/catalog/
+data/products.backup.json
+catalog_ref.json
+*_sample.html
+detail_sample.html
+search_*.html
