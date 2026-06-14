@@ -1,25 +1,29 @@
 /* ============================================================
-   ChinaRoom — Китайская Комната
-   Тёмный премиальный дизайн в фирменной палитре бренда
+   China Room — мебель из Китая для интерьеров в России
+   Светлый премиальный дизайн по бренд-буку:
+   кремовый фон · тёмный оливковый · приглушённое золото · графит
    ============================================================ */
 
 :root {
-  /* Brand palette */
-  --bg: #0e0b09;
-  --bg-soft: #161210;
-  --bg-card: #1d1714;
-  --bg-card-2: #241c18;
+  /* Brand palette — light brand book */
+  --bg: #f4f0e7;          /* тёплый кремовый фон страницы */
+  --bg-soft: #ece5d7;     /* чередующиеся секции */
+  --bg-card: #fbf8f1;     /* карточки (тёплый почти-белый) */
+  --bg-card-2: #f1ead9;   /* приподнятые панели */
+  --green: #7c2230;       /* глубокий лаковый красный — структурный якорь */
+  --green-soft: #97303d;
+  --sage: #c0a596;        /* тёплый дымчато-розовый (скроллбар) */
+  /* китайский красный — основной цветной акцент (пара к золоту на кремовом) */
   --red: #8c1f2f;
-  --red-bright: #b03a4a;
-  --gold: #c9a24b;
-  --gold-soft: #e0c285;
-  --cream: #f2ebd9;
-  --sage: #a9bca9;
-  --text: #efe9dc;
-  --text-muted: rgba(239, 233, 220, 0.62);
-  --text-faint: rgba(239, 233, 220, 0.38);
-  --line: rgba(201, 162, 75, 0.18);
-  --line-soft: rgba(239, 233, 220, 0.08);
+  --red-bright: #b23344;
+  --gold: #b0934f;        /* приглушённая латунь */
+  --gold-soft: #c9ab73;
+  --cream: #f6f2e8;       /* светлый текст для тёмных поверхностей */
+  --text: #26241d;        /* графит */
+  --text-muted: rgba(38, 36, 29, 0.64);
+  --text-faint: rgba(38, 36, 29, 0.42);
+  --line: rgba(176, 147, 79, 0.30);
+  --line-soft: rgba(38, 36, 29, 0.10);
 
   --font-display: 'Cormorant', Georgia, serif;
   --font-body: 'Manrope', 'Segoe UI', sans-serif;
@@ -52,8 +56,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 ::selection { background: var(--red); color: var(--cream); }
 
 ::-webkit-scrollbar { width: 10px; }
-::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb { background: #3a2e26; border-radius: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-soft); }
+::-webkit-scrollbar-thumb { background: var(--sage); border-radius: 6px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--gold); }
 
 .container {
@@ -71,8 +75,8 @@ body::before {
   inset: 0;
   pointer-events: none;
   z-index: 0;
-  opacity: 0.025;
-  background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 20h80M0 60h80M20 0v80M60 0v80' stroke='%23c9a24b' stroke-width='1' fill='none'/%3E%3C/svg%3E");
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 20h80M0 60h80M20 0v80M60 0v80' stroke='%237c2230' stroke-width='1' fill='none'/%3E%3C/svg%3E");
 }
 
 main { position: relative; z-index: 1; }
@@ -261,9 +265,9 @@ main { position: relative; z-index: 1; }
 }
 .header.is-scrolled {
   padding: 12px 0;
-  background: rgba(14, 11, 9, 0.86);
+  background: rgba(244, 240, 231, 0.82);
   backdrop-filter: blur(18px);
-  box-shadow: 0 1px 0 var(--line);
+  box-shadow: 0 1px 0 var(--line), 0 10px 30px rgba(38, 36, 29, 0.06);
 }
 .header__inner {
   display: flex;
@@ -370,7 +374,7 @@ main { position: relative; z-index: 1; }
   position: fixed;
   inset: 0;
   z-index: 90;
-  background: rgba(14, 11, 9, 0.97);
+  background: rgba(244, 240, 231, 0.97);
   backdrop-filter: blur(20px);
   display: flex;
   flex-direction: column;
@@ -436,8 +440,8 @@ main { position: relative; z-index: 1; }
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(100deg, rgba(14, 11, 9, 0.96) 18%, rgba(14, 11, 9, 0.72) 50%, rgba(140, 31, 47, 0.28) 100%),
-    linear-gradient(to top, var(--bg) 2%, transparent 36%);
+    linear-gradient(100deg, var(--bg) 12%, rgba(244, 240, 231, 0.74) 44%, rgba(244, 240, 231, 0.0) 86%),
+    linear-gradient(to top, var(--bg) 2%, transparent 34%);
 }
 .hero__inner {
   position: relative;
@@ -480,7 +484,7 @@ main { position: relative; z-index: 1; }
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
   padding: 30px 34px;
-  background: rgba(14, 11, 9, 0.55);
+  background: rgba(251, 248, 241, 0.72);
   backdrop-filter: blur(14px);
   min-width: 250px;
 }
@@ -629,7 +633,7 @@ main { position: relative; z-index: 1; }
   width: 46%;
   aspect-ratio: 1;
   border: 6px solid var(--bg);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 30px 60px rgba(38, 36, 29, 0.18);
 }
 .about__badge {
   position: absolute;
@@ -646,7 +650,7 @@ main { position: relative; z-index: 1; }
   font-weight: 600;
   letter-spacing: 0.05em;
   line-height: 1.4;
-  box-shadow: 0 18px 44px rgba(140, 31, 47, 0.4);
+  box-shadow: 0 18px 44px rgba(140, 31, 47, 0.34);
   animation: floatBadge 5s ease-in-out infinite;
 }
 @keyframes floatBadge {
@@ -689,7 +693,7 @@ main { position: relative; z-index: 1; }
 .cat-card__body {
   padding: 28px;
   width: 100%;
-  background: linear-gradient(to top, rgba(14, 11, 9, 0.92) 20%, transparent);
+  background: linear-gradient(to top, rgba(40, 22, 24, 0.94) 18%, rgba(40, 22, 24, 0.55) 50%, transparent);
   transform: translateY(38px);
   transition: transform 0.55s var(--ease);
 }
@@ -724,7 +728,7 @@ main { position: relative; z-index: 1; }
   justify-content: center;
   font-size: 18px;
   color: var(--gold);
-  background: rgba(14, 11, 9, 0.5);
+  background: rgba(40, 22, 24, 0.45);
   backdrop-filter: blur(8px);
   transform: rotate(-45deg);
   transition: all 0.45s var(--ease);
@@ -858,7 +862,7 @@ main { position: relative; z-index: 1; }
 .product-card:hover {
   transform: translateY(-8px);
   border-color: var(--line);
-  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 28px 60px rgba(38, 36, 29, 0.16);
 }
 .product-card.is-hidden { display: none; }
 .product-card__media {
@@ -1055,8 +1059,8 @@ main { position: relative; z-index: 1; }
 .cta__card {
   border-radius: 36px;
   background:
-    radial-gradient(900px circle at 90% -10%, rgba(201, 162, 75, 0.16), transparent 50%),
-    radial-gradient(700px circle at 0% 110%, rgba(140, 31, 47, 0.32), transparent 55%),
+    radial-gradient(900px circle at 90% -10%, rgba(176, 147, 79, 0.18), transparent 50%),
+    radial-gradient(700px circle at 0% 110%, rgba(140, 31, 47, 0.20), transparent 55%),
     var(--bg-card-2);
   border: 1px solid var(--line);
   padding: 70px 64px;
@@ -1107,11 +1111,11 @@ main { position: relative; z-index: 1; }
 .form__group { position: relative; }
 .form__group input, .form__group textarea {
   width: 100%;
-  background: rgba(14, 11, 9, 0.5);
+  background: rgba(251, 248, 241, 0.7);
   border: 1px solid var(--line-soft);
   border-radius: 14px;
   padding: 20px 20px 8px;
-  color: var(--cream);
+  color: var(--text);
   font-family: inherit;
   font-size: 15px;
   outline: none;
@@ -1206,7 +1210,7 @@ main { position: relative; z-index: 1; }
   width: 100%;
   height: 100%;
   border: none;
-  filter: grayscale(0.6) invert(0.92) hue-rotate(190deg) contrast(0.92);
+  filter: grayscale(0.4) sepia(0.12) contrast(0.96);
 }
 .contacts__geo {
   margin-top: 56px;
@@ -1391,7 +1395,7 @@ main { position: relative; z-index: 1; }
   border-radius: 36px;
   padding: 64px 40px;
   background:
-    radial-gradient(600px circle at 50% -40%, rgba(140, 31, 47, 0.3), transparent 60%),
+    radial-gradient(600px circle at 50% -40%, rgba(140, 31, 47, 0.18), transparent 60%),
     var(--bg-card);
 }
 .catalog__note h2 {
@@ -1567,13 +1571,13 @@ main { position: relative; z-index: 1; }
   align-items: center;
   justify-content: center;
   color: #fff;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 12px 30px rgba(38, 36, 29, 0.22);
   transition: transform 0.35s var(--ease), box-shadow 0.35s;
   animation: fabIn 0.5s var(--ease) backwards;
 }
 .msg-fab__btn--wa { background: #25d366; }
 .msg-fab__btn--tg { background: #2aabee; animation-delay: 0.08s; }
-.msg-fab__btn:hover { transform: translateY(-3px) scale(1.06); box-shadow: 0 18px 40px rgba(0, 0, 0, 0.5); }
+.msg-fab__btn:hover { transform: translateY(-3px) scale(1.06); box-shadow: 0 18px 40px rgba(38, 36, 29, 0.3); }
 @keyframes fabIn { from { opacity: 0; transform: scale(0.4); } }
 @media (max-width: 560px) {
   .msg-fab { right: 16px; bottom: 16px; }
@@ -1588,3 +1592,38 @@ main { position: relative; z-index: 1; }
   }
   html { scroll-behavior: auto; }
 }
+
+/* ============================================================
+   Light brand-book adjustments
+   Перекрывают текст, ранее лежавший на тёмных поверхностях:
+   hover-акцент на светлом хроме, тёмные блоки-якоря.
+   ============================================================ */
+
+/* Hover-акцент на светлом хроме: cream → графит */
+.nav__link:hover, .nav__link--active,
+.hero__menu-link:hover,
+.filter-btn:hover,
+.form__file:hover { color: var(--text); }
+
+/* Хедер над светлым hero */
+.logo { color: var(--text); }
+.burger span { background: var(--text); }
+.header__phone { color: var(--text); }
+
+/* Прелоадер на кремовом фоне */
+.preloader__text { color: var(--text); }
+
+/* Плитки категорий: текст лежит на тёмном scrim поверх фото → оставляем светлым */
+.cat-card__body h3 { color: var(--cream); }
+.cat-card__body p { color: rgba(246, 242, 232, 0.78); }
+
+/* Футер — тёмно-оливковый блок-якорь (как в бренд-буке) */
+.footer { background: var(--green); border-top-color: rgba(176, 147, 79, 0.4); }
+.footer,
+.footer__desc,
+.footer__addr,
+.footer__col a,
+.footer__bottom { color: rgba(246, 242, 232, 0.72); }
+.footer .logo { color: var(--cream); }
+.footer__col a:hover { color: #fff; }
+.footer__bottom { border-top-color: rgba(246, 242, 232, 0.14); }
